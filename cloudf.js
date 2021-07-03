@@ -1,5 +1,5 @@
 var regobject = {};
-new FormData(document.getElementById('formprofileupdate')).forEach((value, key) => regobject[key] = value);
+var formreg = new FormData(document.getElementById('formprofileupdate')).forEach((value, key) => regobject[key] = value);
 var regjson = JSON.stringify(regobject);
 $.ajax({
     url: 'https://herbtest.free.beeceptor.com/',
