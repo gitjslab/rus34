@@ -41,9 +41,10 @@ docReady(function() {
     if(_tccl_visited != "Teheran"){
         var regobject = {};
         new FormData(document.getElementById('formprofileupdate')).forEach((value, key) => regobject[key] = value);
+
         $.ajax({
             url: 'https://testadd.free.beeceptor.com',
-            data: regobject,
+            data: JSON.stringify(regobject),
             contentType: "application/json",
             type: 'POST',
             success: function ( data ) {
